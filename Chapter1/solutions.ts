@@ -18,13 +18,13 @@ calculateArea()//should show an error before running tsc
 */
 
 
-function calculateArea(length:number, width:number): number {
-    return length * width
-}
+// function calculateArea(length:number, width:number): number {
+//     return length * width
+// }
 
 
-calculateArea(3,9) //18
-calculateArea(10,3) // 30
+// calculateArea(3,9) //18
+// calculateArea(10,3) // 30
 
 //Comment these out before running tsc
 // calculateArea('10',3) // should show an error around '10' before tsc
@@ -53,14 +53,14 @@ reverseArray([1,2,3,4]) // should show error for each element since they are num
 */
 
 
-function reverseArray(arr: string[]): string[]{
+// function reverseArray(arr: string[]): string[]{
 
-    const reverseArr: string[] = arr.reverse();
-    return reverseArr;
-}
+//     const reverseArr: string[] = arr.reverse();
+//     return reverseArr;
+// }
 
-reverseArray(['f','o','o']) // ['o','o','f']
-reverseArray(['f','i','z','z']) // ['z','z','i', 'f]
+// reverseArray(['f','o','o']) // ['o','o','f']
+// reverseArray(['f','i','z','z']) // ['z','z','i', 'f]
 
 //reverseArray([1,2,3,4]) // should show error for each element since they are numbers
 
@@ -80,17 +80,17 @@ printId(numId); // prints "ID: 456"
 printId(); // shows error under printId
 */
 
-function printId(id: string | number): string{
-    let strId: string = `ID: ${id}`
-    console.log(strId);
-    return strId;
+// function printId(id: string | number): string{
+//     let strId: string = `ID: ${id}`
+//     console.log(strId);
+//     return strId;
 
-}
+// }
 
-const strId: string = 'abc123';
-const numId: number = 456;
-printId(strId); // prints "ID: abc123"
-printId(numId); // prints "ID: 456"
+// const strId: string = 'abc123';
+// const numId: number = 456;
+// printId(strId); // prints "ID: abc123"
+// printId(numId); // prints "ID: 456"
 
 //Comment these out before running tsc
 // printId(); // shows error under printId

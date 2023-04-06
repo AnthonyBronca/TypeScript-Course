@@ -47,3 +47,30 @@ reverseArray([1,2,3,4]) // should show error for each element since they are num
 
 
 //Your code here:
+
+
+
+
+
+
+
+/*
+
+Write a function printId that takes an argument that can be
+ either a string or a number and prints it to the console.
+ The function should return the string.
+
+const strId: string = 'abc123';
+const numId: number = 456;
+printId(strId); // prints "ID: abc123"
+printId(numId); // prints "ID: 456"
+
+//Comment these out before running tsc
+printId(); // shows error under printId
+*/
+
+
+
+
+//Comment these out before running tsc
+// printId(); // shows error under printId
