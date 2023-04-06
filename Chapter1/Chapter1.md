@@ -91,3 +91,20 @@ You can see now it is an array that will strictly only hold numbers.
 Let's look at the different types for Arrays
 
 ![Alt text](../images/arrTypes.png)
+
+## Intersection Types
+
+In TypeScript, an intersection type allows you to combine multiple types into a single type that has all the properties and methods of each individual type. You can define an intersection type using the & symbol.
+
+Say we want to make an Array that holds either a string or a number,
+
+If we try to use Union, we will get an error:
+
+![Alt Text](../images/failUnion.png)
+
+We can use Intersection to combine these into a single type.
+Here's an example:
+
+![Alt Text](../images/intersectArr.png)
+
+We will touch on more usages of Intersections when we cover objects in TS
