@@ -2,6 +2,8 @@
 
 TypeScript is currently in version 5.0 (as of March 16th, 2023)!
 
+Before we get into TypeScript Types, I want to note that the extension for TypeScript files is '.ts'. We will
+
 TypeScript uses colons to do type declarations. If we want to declare a variable in TS, it will look the same as JS.
 
 ```
@@ -108,3 +110,7 @@ Here's an example:
 ![Alt Text](../images/intersectArr.png)
 
 We will touch on more usages of Intersections when we cover objects in TS
+
+## Problem Practice!
+
+Head on over to the problems.ts file in this directory to solve some problems
