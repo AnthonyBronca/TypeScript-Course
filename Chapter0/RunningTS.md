@@ -13,7 +13,7 @@ This will create a JavaScript file that we can then run node on.
 Give it a shot! Try running:
 (make sure you are in the Chapter0 directory)
 
-```
+```shell
 tsc helloWorld.ts
 ```
 
@@ -21,7 +21,7 @@ you should now see a JS file appear in this directory with all the TypeScript co
 
 You can then run node on that JS file:
 
-```
+```shell
 node hellWorld.js
 ```
 

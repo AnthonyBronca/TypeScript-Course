@@ -14,7 +14,7 @@ Say you had a function that will add Five to a single number that is passed in.
 
 We can create a function that looks something like this in JS:
 
-```
+```javascript
 function addFive(num){
     return num + 5
 }
@@ -24,7 +24,7 @@ addFive(3) // 8
 
 This is all fine and dandy, however, what would happen a developer were to try and pass in a string?
 
-```
+```javascript
 addFive('a') // 'a5'
 ```
 
@@ -32,7 +32,7 @@ You can see our function will still not crash, but it is outputting something th
 
 In JS we could probably fix this up by changing the function to look something like this:
 
-```
+```javascript
 function addFive(num) {
     if (typeof num !== 'number') {
         throw new Error('num must be a number')

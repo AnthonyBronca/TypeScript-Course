@@ -6,18 +6,20 @@ Before we get into TypeScript Types, I want to note that the extension for TypeS
 
 TypeScript uses colons to do type declarations. If we want to declare a variable in TS, it will look the same as JS.
 
-```
-let num = 5
+```typescript
+let num = 5;
 ```
 
 But this is just JS, and doesn't specify the type of num. Now, TS is pretty smart and will use something called **_Type Inferance_**.
 This means it will assume num is going to be of type num based on the '=5' part. This works fine, but we can also specify the type using colons.
 
-```
-let num: number = 5
+```typescript
+let num: number = 5;
 ```
 
 Here we are clearly specifying that num will be a number. If someone goes to reassign num to a string, we get an error **_BEFORE RUN TIME_**
+
+
 
 ![Alt text](../images/num-example.png)
 
@@ -37,8 +39,8 @@ We can see all the errors are handled, the code is cleaner than our JS example, 
 
 In the introduction, we covered declaring a variable and return type using a colon. We declared a variable num to a number type:
 
-```
-let num: number = 5
+```typescript
+let num: number = 5;
 ```
 
 We also learned that if we omit the number type declaration, TypeScript will use Type inferance to guess what the type will be:
@@ -55,8 +57,8 @@ Now that we learned the basic primary type declaration, lets look into using **_
 
 Say we have a variable:
 
-```
-let money:number = 5
+```typescript
+let money: number = 5;
 ```
 
 We declared it to a number type, which means we can't change money to another type. What if money can be either the number 5 or a string of '$5'
@@ -79,8 +81,8 @@ Don't confuse the class: Array with the typeof array. To declare an array in Typ
 
 Remember, JS lets us do some weird things with Arrays that we shouldn't do. For example:
 
-```
-let arr = [1,'hi', true, null, 10]
+```typescript
+let arr = [1, "hi", true, null, 10];
 ```
 
 This works in JS, but arrays should use the same data type throughout its code. This works in JS because everything in JS is an object. TS lets us control this so devs aren't pushing incorrect types into our arrs.
