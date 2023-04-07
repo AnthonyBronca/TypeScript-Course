@@ -195,37 +195,3 @@ setTimeout(prompt1, 5000)
 
 
 module.exports = { answers }
-/*
-1.What is a type declaration in TypeScript ?
-'a) A way to declare a variable that can be any type\n\nb) A way to declare a type for a variable or function\nc) A way to declare a type that is automatically inferred by the compiler\n'
-b
-2. What is a union type in TypeScript ?
-'a) A type that represents a value that can be either null or undefined\nb) A type that represents a function that can return different types depending on the input\nc) A type that represents a value that can be of multiple types\n'
-c
-3. What is a type alias in TypeScript ?
-'a) A way to create a new type that is based on an existing type\nb) A way to create a type that can be any type\nc) A way to create a type that is automatically inferred by the compiler\n'
-a
-4.What is an interface in TypeScript ?
-'a) A way to define the structure of an object\nb) A way to declare a variable that can be any type\nc) A way to declare a type that is automatically inferred by the compiler\n'
-a
-5.What is the void type in TypeScript ?
-'a) A type that represents a value that can be null or undefined\nb) A type that represents a function that can return different types depending on the input\nc) A type that represents a function that doesn't return anything\n'
-c
-6.What is a type guard in TypeScript ?
-'a) A way to declare a variable that can be any type\nb) A way to narrow down the type of a value in a conditional statement\nc) A way to create a new type that is based on an existing type\n'
-b
-7.What is a type assertion in TypeScript ?
-'a) A way to tell the compiler the type of a value\nb) A way to create a new type that is based on an existing type\nc) A way to narrow down the type of a value in a conditional statement\n'
-a
-8.What is optional chaining in TypeScript ?
-'a) A way to declare a variable that can be any type\nb) A way to create a new type that is based on an existing type\nc) A way to safely access properties in nested object structures\n'
-c
-9.What is nullish coalescing in TypeScript ?
-'a) A way to declare a variable that can be any type\nb) A way to create a new type that is based on an existing type\nc) A way to specify a default value only when the value is null or undefined\n'
-c
-10.How do you declare a union type in TypeScript ?
-'a) Using the & operator to separate the types\nb) Using the | operator to separate the types\nc) Using the ? operator to specify the optional type\n'
-b
-
-
-*/
