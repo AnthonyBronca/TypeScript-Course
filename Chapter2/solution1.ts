@@ -99,24 +99,47 @@ Try to solve this using a type alias
 
 */
 
-type NumOrString = number | string
+// type NumOrString = number | string
 
-const addNumOrString = (val1: NumOrString, val2: NumOrString): NumOrString => {
-    if(typeof val1 === 'string' && typeof val2 === 'string'){
-        const strRes: string = val1 + val2
-        return strRes;
-    } else if (typeof val1 === 'number' && typeof val2 === 'number'){
-        const numRes:number = val1 + val2;
-        return numRes;
-    }
+// const addNumOrString = (val1: NumOrString, val2: NumOrString): NumOrString => {
+//     if(typeof val1 === 'string' && typeof val2 === 'string'){
+//         const strRes: string = val1 + val2
+//         return strRes;
+//     } else if (typeof val1 === 'number' && typeof val2 === 'number'){
+//         const numRes:number = val1 + val2;
+//         return numRes;
+//     }
 
-   let newVal1:number = Number(val1);
-   let newVal2:number = Number(val2);
-   return newVal1 + newVal2
+//    let newVal1:number = Number(val1);
+//    let newVal2:number = Number(val2);
+//    return newVal1 + newVal2
 
+// }
+
+
+// console.log(addNumOrString(1,3)) // 4
+// console.log(addNumOrString(1,'3')) // 4
+// console.log(addNumOrString('5','3')) // '53'
+
+
+/*
+You are working on a TypeScript project that includes a function sumNumbers
+ that takes an array of numbers and returns their sum.
+ However, you recently made some changes to the function, and
+ now you are not sure if it still works correctly.
+
+Your task is to write some test cases using TypeScript assertions to
+verify that sumNumbers works as expected.
+
+to test this function run:
+
+mocha testPhase1/spec1.js
+
+*/
+
+function sumNumbers(numbers: number[]): number {
+  return numbers.reduce((acc, cur) => acc + cur, 0);
 }
 
 
-console.log(addNumOrString(1,3)) // 4
-console.log(addNumOrString(1,'3')) // 4
-console.log(addNumOrString('5','3')) // '53'
+module.exports = sumNumbers
