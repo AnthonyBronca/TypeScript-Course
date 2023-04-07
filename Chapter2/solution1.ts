@@ -131,15 +131,15 @@ You are working on a TypeScript project that includes a function sumNumbers
 Your task is to write some test cases using TypeScript assertions to
 verify that sumNumbers works as expected.
 
-to test this function run:
+to test this function run (make sure you are in the root dir):
 
-mocha testPhase1/spec1.js
+npm test
 
 */
 
-function sumNumbers(numbers: number[]): number {
-  return numbers.reduce((acc, cur) => acc + cur, 0);
-}
+// function sumNumbers(numbers: number[]): number {
+//   return numbers.reduce((acc, cur) => acc + cur, 0);
+// }
 
 
-module.exports = sumNumbers
+// module.exports = sumNumbers

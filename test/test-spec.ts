@@ -1,7 +1,7 @@
 const _chai = require('chai');
 const expect = _chai.expect;
 
-let sumNumbersTest = require('../Chapter2/solution1.ts')
+let sumNumbersTest = require('../Chapter2/phase1.ts')
 
 describe('sumNumbers function', () => {
     it('should return 0 for an empty array', () => {
