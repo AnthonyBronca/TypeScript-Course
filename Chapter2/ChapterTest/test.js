@@ -183,8 +183,6 @@ function prompt10() {
         answers.push(answer)
         console.clear();
 
-        console.log(answers)
-        console.log(['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'])
         console.log('You scored : ', grader(answers), 'out of 100')
         readline.close();
     });
