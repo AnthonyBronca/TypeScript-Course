@@ -272,13 +272,13 @@ In this example, we have a function getUsername() that returns a string or null.
 
 However, this code has a problem. If the getUsername() function returns an empty string or a value that evaluates to false, the || operator will use the default value "Anonymous" instead of the empty string.
 
-Nullish coalescing provides a more precise and reliable way to handle nullish values. With nullish coalescing, we can use the ?? operator to specify a default value only when the value is null or undefined.
+`Nullish coalescing` provides a more precise and reliable way to handle nullish values. With `nullish coalescing`, we can use the `??` operator to specify a default value only when the value is null or undefined.
 
 ```typescript
 const name = getUsername() ?? "Anonymous";
 ```
 
-In this example, the ?? operator ensures that the default value is only used when the value returned by getUsername() is null or undefined. If the value is an empty string or a value that evaluates to false, it is not treated as nullish and the empty string will be used.
+In this example, the `??` operator ensures that the default value is only used when the value returned by getUsername() is `null` or `undefined`. If the value is an empty string or a value that evaluates to false, it is not treated as nullish and the empty string will be used.
 
 ## Congrats!!!
 

@@ -15,17 +15,17 @@ Say you had a function that will add Five to a single number that is passed in.
 We can create a function that looks something like this in JS:
 
 ```javascript
-function addFive(num){
-    return num + 5
+function addFive(num) {
+  return num + 5;
 }
 
-addFive(3) // 8
+addFive(3); // 8
 ```
 
 This is all fine and dandy, however, what would happen a developer were to try and pass in a string?
 
 ```javascript
-addFive('a') // 'a5'
+addFive("a"); // 'a5'
 ```
 
 You can see our function will still not crash, but it is outputting something that we do not intend. It is outputting a string, and definitely not doing a mathematical equation to add 5.
@@ -34,15 +34,15 @@ In JS we could probably fix this up by changing the function to look something l
 
 ```javascript
 function addFive(num) {
-    if (typeof num !== 'number') {
-        throw new Error('num must be a number')
-    } else {
-        return num + 5
-    }
+  if (typeof num !== "number") {
+    throw new Error("num must be a number");
+  } else {
+    return num + 5;
+  }
 }
 
-addFive(3) // 8
-addFive('a') // Error: num must be a number
+addFive(3); // 8
+addFive("a"); // Error: num must be a number
 ```
 
 This is much better code. We have a function with a good naming, it has some type checking, and it works as intended. Cool! But the issue with this in JS is there is no way, as a developer, to know I will get that error when passing in a string until I either:
@@ -51,5 +51,7 @@ This is much better code. We have a function with a good naming, it has some typ
 2. Run Node and see the output in the terminal
 
 In this example, it is really easy to visualize and follow code, especially with the good naming. But if this project gets any bigger, more devs may start joining, and it can clearly become a mess. You may have already seen this when working on a group project and some members use naming conventions that don't make sense to you (but it does to them) and then you have to try and follow their code to see what is doing. Then you litter the codespace with console.logs until you know what you can and can't do and what the expected output is from their function. This is where TypeScript comes in handy!
+
+> ### Before moving on, please checkout the RunningTS.md file to lean how to run TSC and convert TypeScript -> JavaScript. If you know how to do this, jump to chapter 1
 
 ## **Please go to Chapter 1 To Continue**
