@@ -1,2 +1,5 @@
 scratch.ts
 /node_modules
+/mocha.opts
+/tsconfig.json
+/typings.json
