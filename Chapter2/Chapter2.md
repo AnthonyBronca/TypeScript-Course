@@ -51,7 +51,7 @@ const obj = {
 
 That's a lot of type checking that can go wrong! We can use TypeScript interfaces if we want to add types to the key:value pairs
 
-To do this, we use the _interface_ keyword. It is also convention to use PascalCase for the interface name
+To do this, we use the `interface` keyword. It is also convention to use PascalCase for the interface name
 
 ```typescript
 interface Obj {
@@ -86,9 +86,9 @@ I can better guarantee that the function won't break when a developer tries to p
 
 ## Void and Any Types
 
-At this point, let's introduce two new types. TypeScript has the types 'any' and 'void'.
+At this point, let's introduce two new types. TypeScript has the types `any` and `void`.
 
-Void type lets us declare something that should not exist. For example, in our functions we don't always want to return something. Sure I could leave the function return type as empty but this would inherit the 'any' property. Depending on the settings of your TypeScript Compiler (We will learn about this soon), you may be forced to have return types for your functions, even if nothing is to be returned. Void can be used to tell our function that nothing will be returned, and an error is thrown if something is returned.
+`void` type lets us declare something that should not exist. For example, in our functions we don't always want to return something. Sure I could leave the function return type as empty but this would inherit the `any` property. Depending on the settings of your TypeScript Compiler (We will learn about this soon), you may be forced to have return types for your functions, even if nothing is to be returned. Void can be used to tell our function that nothing will be returned, and an error is thrown if something is returned.
 
 Let's refactor the printHeroName function from above to not need to return anything:
 
@@ -112,19 +112,24 @@ function printHeroName(hero: superHero): void {
 }
 ```
 
-Void is pretty easy to use, but what is 'any'?
+Void is pretty easy to use, but what is `any`?
 
-'any', in typescript opens the interpertation to be literally anything. It can be a number, string, undefined, who knows? This is exactly how JavaScript works. As a developer using TypeScript, you should avoid using the any type as much as possible. In this case, why would you even use TypeScript if you can just use JavaScript to do that for you. It is still important to know how to use it, and what it does. Let's take a look:
+`any`, in typescript opens the interpertation to be literally anything. It can be a number, string, undefined, who knows? This is exactly how JavaScript works. As a developer using TypeScript, you should avoid using the any type as much as possible. In this case, why would you even use TypeScript if you can just use JavaScript to do that for you. It is still important to know how to use it, and what it does. Let's take a look:
 
 ![Alt Text](../images/anyshowcase.png)
 
-Notice how I can assign a variable to 'any', and then declare it to the 'number' type of 5. Traditionally, TypeScript would rationalzie this any use type inferance to guess all versions of Variable reassignments will be locked at a 'number' type. But we locked it to be any so that we can then reassign it to any other version of the type and not get any errors.
+Notice how I can assign a variable to `any`, and then declare it to the `number` type of 5. Traditionally, TypeScript would rationalzie this any use type inferance to guess all versions of Variable reassignments will be locked at a `number` type. But we locked it to be any so that we can then reassign it to any other version of the type and not get any errors.
 
 Again, this should be avoided so that we don't run into the typical type related bugs we see in JavaScript. Also TypeScript is FTW (For The Win)!
 
 > **This is a good time to take a break! Before moving on, work on the phase1 problems located in phase1.ts**
 
 ## Type Guards and Assertions
+
+In TypeScript, type guards are a way to narrow down the type of a variable based on certain conditions. Type guards can be especially useful when working with union types, which are types that can have multiple possible types.
+
+There are several ways to implement type guards in TypeScript. One way is to use the `typeof` operator to check the type of a variable:
+
 
 - Type guards and assertions
 - Optional chaining and nullish coalescing

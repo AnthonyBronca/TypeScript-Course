@@ -10,7 +10,7 @@ TypeScript uses colons to do type declarations. If we want to declare a variable
 let num = 5;
 ```
 
-But this is just JS, and doesn't specify the type of num. Now, TS is pretty smart and will use something called **_Type Inferance_**.
+But this is just JS, and doesn't specify the type of num. Now, TS is pretty smart and will use something called _`Type Inferance`_.
 This means it will assume num is going to be of type num based on the '=5' part. This works fine, but we can also specify the type using colons.
 
 ```typescript
@@ -18,8 +18,6 @@ let num: number = 5;
 ```
 
 Here we are clearly specifying that num will be a number. If someone goes to reassign num to a string, we get an error **_BEFORE RUN TIME_**
-
-
 
 ![Alt text](../images/num-example.png)
 
@@ -31,7 +29,7 @@ We can now take this a step further with functions. Let's use our previous examp
 
 ![Alt text](../images/addFive1.png)
 
-We have added a type to a variable in the parameters called num, and it is assigned to the type 'number'. We have also specfied that our function will return a value 'number'. We are getting an error because we do not have a return type. Let's complete this function!
+We have added a type to a variable in the parameters called num, and it is assigned to the type `number`. We have also specfied that our function will return a value `number`. We are getting an error because we do not have a return type. Let's complete this function!
 
 ![Alt text](../images/addFive2.png)
 
@@ -51,7 +49,7 @@ Let's take a look at all the other types!
 
 ![Alt Text](../images/types1.png)
 
-Now that we learned the basic primary type declaration, lets look into using **_Union Types_**
+Now that we learned the basic primary type declaration, lets look into using _`Union Types`_
 
 ## Union Types
 
@@ -63,7 +61,7 @@ let money: number = 5;
 
 We declared it to a number type, which means we can't change money to another type. What if money can be either the number 5 or a string of '$5'
 
-We can use a **_Union Type_** to create multiple type possibilities for a variable. To do this, we use a single pipe symbol.
+We can use a _`Union Type`_ to create multiple type possibilities for a variable. To do this, we use a single pipe symbol.
 
 ![Alt text](../images/union1.png)
 
