@@ -21,14 +21,14 @@ This course will provide an introduction to TypeScript, a superset of JavaScript
 
 - Basic syntax and types in TypeScript
 - Union and Intersection types
-- Quiz
 
 ### Chapter 2: Advaned Types and Features
 
 - Type aliases and interfaces
 - Type guards and assertions
 - Optional chaining and nullish coalescing
-- Chapter 1 and 2 Coding Test
+- Chapter 1 and 2 MC Test
+- Chapter 1 and 2 Problems
 
 ### Chapter 3: Classes and inheritance
 
