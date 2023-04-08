@@ -374,5 +374,87 @@ newDev.printNameAndTitle(); // logs: Hi I am Jane Doe, and I am a developer
 
 ** This is a great time to take a break from reading and jump into some code! Head over to the hero.ts file located in the problems directory in this directory.**
 
-Generics
-Chapter 3 Coding Test
+## Generics
+
+TypeScript's `generics` enable the creation of reusable code components that can be applied to any data type.
+
+> ### What are Generics?
+
+Generics allow the creation of functions, classes, and interfaces that can work with a variety of data types. In TypeScript, `generics` are represented by a `type parameter`, **which is a placeholder for the actual data type that will be used at runtime.**
+
+_Generics are similar to templates in other programming languages like C++, Java, and C#. In TypeScript, we use angle brackets (< >) to define a type parameter._
+
+Here's an example:
+
+```typescript
+function identity<T>(arg: T): T {
+  return arg;
+}
+```
+
+In the code above, we have a function called identity that takes a single argument of type `T`. The `<T>` in the function signature indicates that `T` is a type parameter. This means that `T` can be any data type.
+
+When we call the identity function with an argument, TypeScript will infer the type of `T` based on the argument's type. For example, if we call the function with a string
+
+```typescript
+let output = identity<string>("hello world");
+console.log(output); // prints "hello world"
+```
+
+In the example above, we're calling the identity function with a string argument. TypeScript will infer that `T` is a string, so the return type of the function is also a string. We're storing the output of the function in a variable called output and then printing it to the console.
+
+> ### Using Generics with Classes
+
+We can also use generics with classes. For example, here's a generic class called Box that can hold any type of value:
+
+```typescript
+class Box<T> {
+  private value: T;
+
+  constructor(value: T) {
+    this.value = value;
+  }
+
+  getValue(): T {
+    return this.value;
+  }
+}
+```
+
+In the code above, we have a class called Box that has a single type parameter called T. The Box class has a private property called value of type `T`. The constructor takes an argument of type `T` and assigns it to the value property.
+
+The Box class also has a method called getValue that returns the value property.
+
+Here's an example of how we can use the Box class:
+
+```typescript
+let box1 = new Box<string>("hello world");
+let box2 = new Box<number>(42);
+
+console.log(box1.getValue()); // prints "hello world"
+console.log(box2.getValue()); // prints 42
+```
+
+In the example above, we're creating two instances of the Box class. The first instance is holding a string value, and the second instance is holding a number value. We're calling the getValue method on both instances to retrieve the values.
+
+> ### Constraining Generics
+
+Sometimes, we want to constrain the type parameter to a specific set of data types. We can use the `extends` keyword to do this. For example, here's a generic function called loggingIdentity that only accepts arguments that have a length property:
+
+```typescript
+interface Lengthwise {
+  length: number;
+}
+
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+  console.log(`Length of ${arg}: ${arg.length}`);
+  return arg;
+}
+
+loggingIdentity("hello world"); // prints "Length of hello world: 11"
+loggingIdentity([1, 2, 3]); // prints "Length of
+```
+
+Generics are going to be used heavily when we introduce them in React!
+
+**Unit Test Still in Production**
