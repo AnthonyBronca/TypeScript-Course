@@ -2,7 +2,7 @@ const _chai = require('chai');
 const expect = _chai.expect;
 
 
-import Hero from '../Chapter3/solutions/hero-solutions';
+import Hero from '../Chapter3/problems/hero';
 
 const spiderman = new Hero(
     'Peter Parker',

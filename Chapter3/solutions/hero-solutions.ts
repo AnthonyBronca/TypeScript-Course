@@ -35,7 +35,7 @@ class Hero {
         return this.realName;
     }
 
-    static getWeakness(hero){
+    static getWeakness(hero: Hero){
         return hero.weakness
     }
 }
