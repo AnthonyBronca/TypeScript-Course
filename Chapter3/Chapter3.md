@@ -376,9 +376,11 @@ newDev.printNameAndTitle(); // logs: Hi I am Jane Doe, and I am a developer
 
 ## Generics
 
-TypeScript's `generics` enable the creation of reusable code components that can be applied to any data type.
+Let me start by saying that Generics have pretty ehh syntax, and are complicated to understand at first. They have some very specific rules to follow, however, they are extremely useful and you will definitely be using it a lot out in the wild. I would say this section alone may need to be its own section, but let's cover the basics!
 
 > ### What are Generics?
+
+TypeScript's `generics` enable the creation of reusable code components that can be applied to any data type.
 
 Generics allow the creation of functions, classes, and interfaces that can work with a variety of data types. In TypeScript, `generics` are represented by a `type parameter`, **which is a placeholder for the actual data type that will be used at runtime.**
 
@@ -394,14 +396,82 @@ function identity<T>(arg: T): T {
 
 In the code above, we have a function called identity that takes a single argument of type `T`. The `<T>` in the function signature indicates that `T` is a type parameter. This means that `T` can be any data type.
 
-When we call the identity function with an argument, TypeScript will infer the type of `T` based on the argument's type. For example, if we call the function with a string
+So let's look at when this may be necessary. First, here is a JavaScript example of a function that may do a different action based on the type if takes. To keep it simple, we will just have it return the data type.
 
-```typescript
-let output = identity<string>("hello world");
-console.log(output); // prints "hello world"
+```javascript
+function returnInput(data) {
+  return data;
+}
+
+returnInput("Hey"); // returns a string that says 'hey'
+returnInput(1); //returns a number 1
+returnInput(true); // returns a boolean true
+returnInput([]); //returns an array type that is empty
 ```
 
-In the example above, we're calling the identity function with a string argument. TypeScript will infer that `T` is a string, so the return type of the function is also a string. We're storing the output of the function in a variable called output and then printing it to the console.
+You can see this function has a lot of responsibility in terms of returning different data types. While the function itself doesn't do anything important, this would be really annoying to type in TypeScript using everything we know about TypeScript before the introduction of `generics`;.
+
+Here is what it may look like:
+
+```typescript
+function returnInput(
+  data: string | number | boolean | array
+): string | number | boolean | any[] {
+  return data;
+}
+```
+
+This is super wordy, doesn't even cover the edge cases of when an object is passed in or when a TypeScript array of specific data types such as a string[] may be passed in. Generics allow us to specify what the input will be and use that knowledge to declare the type in the parameter and return fields.
+
+First, let's rebuild our returnInput to use a generic type:
+
+```typescript
+function returnInput<genericType>(data: genericType): genericType {
+  return data;
+}
+```
+
+Already much cleaner! But let's also readjust it to follow convention by just changing it to use the `T` for "type"
+
+```typescript
+function returnInput<T>(data: T): T {
+  return data;
+}
+```
+
+Now our function has a lot more functionality in terms of handling types without having to use 'any' to cheat our way through TypeScript. So to invoke it we can now do something like:
+
+```typescript
+function returnInput<genericType>(data: genericType): genericType {
+  return data;
+}
+
+returnInput<string>("hello");
+returnInput<string[]>(["hi"]);
+returnInput<number>(1);
+returnInput<boolean>(true);
+```
+
+TypeScript will now know what the incoming type is and we can utilize that data.
+
+Here is what TypeScript will say now if we try to call the function without passing in a type or passing in an argument:
+
+![Alt text](../images/emptyreturn.png).
+
+While it shows an error since I invoked it with an empty argument, I can now use TypeScript's `type inferance` that we learned about to skip having to specify incoming data during invokation. Our finished function with calls now looks like this:
+
+```typescript
+function returnInput<T>(data: T): T {
+  return data;
+}
+
+returnInput("hello"); //TypeScript will know the type is 'string'
+returnInput(["hi"]); //TypeScript will know the type is array of type 'string'
+returnInput(1); //TypeScript will know the type is 'number'
+returnInput(true); //TypeScript will know the type is 'boolean'
+```
+
+In the example above, we're calling the returnInputfunction with a different type arguments. TypeScript will infer the `T`, so the return type of the function is also a of the same type.
 
 > ### Using Generics with Classes
 
