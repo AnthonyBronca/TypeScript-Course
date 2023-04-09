@@ -525,6 +525,10 @@ loggingIdentity("hello world"); // prints "Length of hello world: 11"
 loggingIdentity([1, 2, 3]); // prints "Length of
 ```
 
-Generics are going to be used heavily when we introduce them in React!
+Generics are going to be used heavily when we introduce them in React, but let's also take a look at Generics with plain vanilla HTML and DOM manipulation.
+
+## Generics with DOM
+
+In this directory, you will find a file called generics.html. Take a look at the classes and ids for the simple web page. Open the html in a local browser session, so we can take a look at the console as we make some changes to the typescript code. The TypeScript code for this section will be in the file called dom.ts
 
 **Unit Test Still in Production**
