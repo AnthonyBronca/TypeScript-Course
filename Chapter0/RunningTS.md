@@ -1,6 +1,6 @@
 # How to Run TypeScript
 
-TypeScript compiles into JavaScript, and then we can use node to run the output JavaScript file to compile our code into C
+TypeScript compiles into JavaScript, and then we can use node to run the output JavaScript file to interpret our code.
 
 To compile a TypeScript File we use the command:
 
