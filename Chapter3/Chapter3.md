@@ -456,7 +456,7 @@ TypeScript will now know what the incoming type is and we can utilize that data.
 
 Here is what TypeScript will say now if we try to call the function without passing in a type or passing in an argument:
 
-![Alt text](../images/emptyreturn.png).
+![Alt text](../images/emptyreturn.png)
 
 While it shows an error since I invoked it with an empty argument, I can now use TypeScript's `type inferance` that we learned about to skip having to specify incoming data during invokation. Our finished function with calls now looks like this:
 
@@ -527,8 +527,126 @@ loggingIdentity([1, 2, 3]); // prints "Length of
 
 Generics are going to be used heavily when we introduce them in React, but let's also take a look at Generics with plain vanilla HTML and DOM manipulation.
 
+## Multiple Generics
+
+Let's say we want to create a an object that is the spread of two seperate functions:
+
+```typescript
+let person = {
+  name: "John",
+  age: 20,
+};
+
+let accountInfo = {
+  username: "Johnuser",
+  password: "some_password",
+};
+
+function makeAccount(person, accountInfo) {
+  return {
+    ...person,
+    ...accountInfo,
+  };
+}
+
+makeAccount(person, accountInfo);
+```
+
+This creates a problem because in our function, the variables person and accountInfo are infered as `any`. We want to avoid using `any`, so we can use generic to combine them. But we also have another problem because person has types of string and number, while accountInfo has types of strings. We can use `multiple generics` to make the correct specification
+
+```typescript
+let person = {
+  name: "John",
+  age: 20,
+};
+
+let accountInfo = {
+  username: "Johnuser",
+  password: "some_password",
+};
+
+function makeAccount<T, U>(person: T, accountInfo: U) {
+  return {
+    ...person,
+    ...accountInfo,
+  };
+}
+
+makeAccount(person, accountInfo);
+```
+
+Now I can assign "person" to type T, or whatever the type is when it was passed into our function call. And I can assign "accountInfo" to type U, or whatever the type is when it was passed into our function call. I do not need to specify the return type in this case because TypeScript is able to use `type inferance` in order to see what the new type will be when I return the merged objects, which is the `Union` of `T` and `U`
+
+![Alt text](../images/genericMerge.png)
+
+**Note**: Why did I use `T` and `U`? Convention! Just like in for loops where we start with 'i', then a nested for loop will be 'j' and so on. We start with `T` to make the shorted word for "type" but then we continue in alphabetical order. If we had another argument, we would then use `V` and so on.
+
 ## Generics with DOM
 
 In this directory, you will find a file called generics.html. Take a look at the classes and ids for the simple web page. Open the html in a local browser session, so we can take a look at the console as we make some changes to the typescript code. The TypeScript code for this section will be in the file called dom.ts
 
-**Unit Test Still in Production**
+Before we begin, let's look into having out tsc command run automatically. It would be pretty annoying if we had to keep running tsc on our dom.ts everytime we want to see a change happen in the browser console. To have our tsc command for us automatically we can use tsc's watch flag. Run tsc on the dom.ts file using:
+
+```shell
+tsc Chapter3/dom.ts --watch
+```
+
+this will run tsc, but leave an event listener on the terminal checking for changes made to the ts file. This way, any changes made in the dom.ts file will auto run tsc and output to our dom.js file for viewing from our html file.
+
+Note: If you see errors on tsc, you may be watching the root which may show errors if you have unsolved errors due to some tests in this project looking for solved problems that you may not have done yet.
+
+Back to our regularly scheduled topic of `generics`!
+
+When we try to run:
+
+```typescript
+let input = document.querySelector(".input-box");
+```
+
+You will see our TypeScript says our input variable is of type `Element`|`null`. This makes sense, because it is trying to infer that the querySelector may return some sort of element, but it is not sure what OR it may not find anything matching that class, therefore it should return null.
+
+This isn't too helpful for additional code, so this is where `generics` comes into play! Let's add a generic for the type of `HTMLElement`.
+
+```typescript
+let input = document.querySelector<HTMLElement>(".input-box");
+```
+
+This will now change the type to be more specific on what querySelector grabs, while still keeping its concept of possibly null. This will introduce another error. Let's say we want to change the value of the input. We can run a condition to ensure our input is definitely not null, but we get an error.
+
+Here is the code:
+
+```typescript
+window.addEventListener("DOMContentLoaded", () => {
+  let input = document.querySelector<HTMLElement>(".input-box");
+
+  if (input) {
+    input.value = "hi";
+  }
+});
+```
+
+This is the error:
+
+![Alt text](../images/htmlElement.png)
+
+We get this error because .value doesn't exist on HTMLElement. It exists on HTML Input Elements. So let's change our generic to be HTMLInputElement
+
+updated code:
+
+```typescript
+let input = document.querySelector<HTMLInputElement>(".input-box");
+
+if (input) {
+  input.value = "hi";
+}
+```
+
+You should be seeing the value of the input box update each time you save.
+
+Hopefully this helps cover `generics` a bit better before touching it again when we get to TypeScript with React.
+
+Phew that was a lot so let's actually make a project!
+
+Head on over to the todoProject directory in Chapter 3
+
+**todoProject in Production**

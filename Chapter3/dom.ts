@@ -1,11 +1,10 @@
 window.addEventListener("DOMContentLoaded", ()=> {
 
 
-    console.log('hello')
-    console.log('hi')
-    console.log('test')
-    console.log('hello?')
+    let input = document.querySelector<HTMLInputElement>('.input-box')
 
 
-
+    if(input){
+        input.value = 'test'
+    }
 })

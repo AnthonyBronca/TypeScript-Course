@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", function () {
-    console.log('hello');
-    console.log('hi');
-    console.log('test');
+    var input = document.querySelector('.input-box');
+    if (input) {
+        input.value = 'test';
+    }
 });
