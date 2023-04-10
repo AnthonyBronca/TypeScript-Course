@@ -22,7 +22,7 @@ This course will provide an introduction to TypeScript, a superset of JavaScript
 - Basic syntax and types in TypeScript
 - Union and Intersection types
 
-### Chapter 2: Advaned Types and Features
+### Chapter 2: Advanced Types and Features
 
 - Type aliases and interfaces
 - Type guards and assertions
