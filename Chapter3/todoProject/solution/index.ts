@@ -7,7 +7,6 @@ window.addEventListener("DOMContentLoaded", ()=> {
 
     let newText = inputField.value
 
-
     function makeNewListItem(text: string):HTMLLIElement{
 
         const newListItem = document.createElement('li');

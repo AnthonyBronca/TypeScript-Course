@@ -645,7 +645,33 @@ You should be seeing the value of the input box update each time you save.
 
 Hopefully this helps cover `generics` a bit better before touching it again when we get to TypeScript with React.
 
-Phew that was a lot so let's actually make a project!
+### Non-Null Assertions
+
+Non-null assertions are pretty simple. They do not necessarily have to do with generics, but they are often used together.
+
+Let's take a look at the example above where we used generics to return an HTMLInputElement:
+
+```typescript
+let input = document.querySelector<HTMLInputElement>(".input-box");
+```
+
+Here, HTMLInputElement will set input's type to be either of type `HTMLInputElement` or of type `null`. This is important because, what if that input disappears. What if it is an element that a user can delete from their website? Perfect it is covered by that null protection! But we don't always want to account for that null. It would be annoying having to always say something like:
+
+```typescript
+if (input !== null) {
+  input.value = someValue;
+}
+```
+
+If we know that a specific element is hardcoded into the site, say for example the input is hardcoded into the .html file, or the react file or whatever chances are that element will always be there. It is up to you as a developer to figure out if that element will always be there or not (again, you can make certain elements be deleted or reappear so account for that). If you know that th element will always be there we can use `non-null assertions`. The syntax for this is `!` at the end of the line:
+
+```typescript
+let input = document.querySelector<HTMLInputElement>(".input-box")!;
+```
+
+The exclamation will not make input's type strictly set to type `HTMLInputElement`. Now I don't need to use `type-narrowing` to account for possible other types coming in like we saw with null. We will have better examples of this in the todoProject!
+
+Phew that was a lot of stuff so let's actually make a project!
 
 Head on over to the todoProject directory in Chapter 3
 
