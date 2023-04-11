@@ -1,5 +1,7 @@
 # Introduction: TypeScript
 
+> Video Link: https://youtu.be/2ZoiFS5kgss
+
 ## What is it?
 
 TypeScript is a super set of JavaScript. This means it encapsulates JavaScript so it can do everything JavaScript can do, but it also has TypeScript specific things it can do on top of the JS syntax. The biggest thing being type checking.
